@@ -3,6 +3,7 @@ import Body from "@/components/sections/body";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { FeatureCard } from "@/components/ui/features";
 import Navbar from "@/components/ui/navbar";
 
 export default function Home() {
@@ -24,6 +25,32 @@ export default function Home() {
       houseName: "Kamang Residence",
       location: "South Jakarta, DKI Jakarta",
       annualReturn: "16.4%",
+    },
+  ];
+
+  const features = [
+    {
+      image: "/Feature1.png",
+      title: "Skip the down payment",
+      description: "Acquire fractional ownership of rental properties.",
+    },
+    {
+      image: "/Feature2.png",
+      title: "Earn rent today, appreciation tomorrow",
+      description:
+        "Get rent payouts and collect property appreciation when you cash out.",
+    },
+    {
+      image: "/Feature3.png",
+      title: "Own multiple properties without the landlord headaches",
+      description:
+        "Diversify your portfolio without multiplying your workload. Vote on key property decisions, and professional property managers handle the rest.",
+    },
+    {
+      image: "/Feature4.png",
+      title: "Keep full control of your investments",
+      description:
+        "Forget expensive brokers and lock-in periods. Easily reinvest your rental income for the long term, or list your holdings for sale whenever you like.",
     },
   ];
   return (
@@ -65,16 +92,41 @@ export default function Home() {
               or down payments required.
             </p>
           </div>
-          <article className="flex flex-wrap gap-6 justify-center px-4">
-            {properties.map((property, index) => (
-              <Card
-                key={index}
-                image={property.image}
-                houseName={property.houseName}
-                location={property.location}
-                annualReturn={property.annualReturn}
-              />
-            ))}
+          <article className="flex flex-col gap-6 items-center justify-center px-4">
+            <div className="flex flex-wrap gap-6">
+              {properties.map((property, index) => (
+                <Card
+                  key={index}
+                  image={property.image}
+                  houseName={property.houseName}
+                  location={property.location}
+                  annualReturn={property.annualReturn}
+                />
+              ))}
+            </div>
+            <Button variant={"primary"} className="">
+              View Properties
+            </Button>
+
+            <div className="flex flex-col space-y-4 items-center mt-20 justify-center">
+              <h1 className="text-4xl">
+                You don’t have to be a pro to invest like one
+              </h1>
+              <h3 className="text-base font-medium">
+                Get instant access to great property deals, in-depth analysis,
+                and a community of wealth builders from around the world.
+              </h3>
+              <div className="grid grid-cols-2 gap-4">
+                {features.map((feature, index) => (
+                  <FeatureCard
+                    key={index}
+                    image={feature.image}
+                    title={feature.title}
+                    description={feature.description}
+                  />
+                ))}
+              </div>
+            </div>
           </article>
         </section>
       </main>
