@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
   	extend: {
 		fontFamily: {
-			lato: ['var(--font-lato)'],
+			inter: ['var(--font-inter)'],
 		},
   		colors: {
 			hero: {

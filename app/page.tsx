@@ -1,17 +1,38 @@
 "use client";
-import { useState } from "react";
+import Body from "@/components/sections/body";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import Navbar from "@/components/ui/navbar";
 
 export default function Home() {
+  const properties = [
+    {
+      image: "/House1.png",
+      houseName: "Plaza 54 Residence",
+      location: "South Jakarta, DKI Jakarta",
+      annualReturn: "7.04%",
+    },
+    {
+      image: "/House2.png",
+      houseName: "Greenwood Estate",
+      location: "Bali, Indonesia",
+      annualReturn: "6.50%",
+    },
+    {
+      image: "/House3.png",
+      houseName: "Kamang Residence",
+      location: "South Jakarta, DKI Jakarta",
+      annualReturn: "16.4%",
+    },
+  ];
   return (
     <>
       <Navbar />
       <main className="h-full relative overflow-hidden flex flex-col">
         <section className="bg-violet-50 pb-8 h-auto md:h-3/4 flex flex-col md:flex-row items-center justify-between text-start relative p-6 md:p-14">
           <div className="flex flex-col w-full md:w-1/2">
-            <h1 className="font-lato font-bold text-3xl md:text-5xl mb-4 bg-gradient-to-r from-hero-blue to-hero-orange w-full md:w-3/5 text-transparent bg-clip-text">
+            <h1 className="font-bold text-3xl md:text-4xl mb-4 bg-gradient-to-r from-hero-blue to-hero-orange w-full md:w-3/5 text-transparent bg-clip-text">
               Turning Properties into Opportunities
             </h1>
             <p className="mb-6 max-w-full md:max-w-2xl w-full md:w-3/5">
@@ -33,81 +54,28 @@ export default function Home() {
             />
           </div>
         </section>
-        <section className="bg-hero-secondary py-12 h-auto font-bold space-y-12 text-white flex-col items-center justify-center">
+        <Body />
+        <section className="bg-violet-50 py-12 h-auto font-bold space-y-12 text-black flex-col items-center justify-center">
           <div className="flex flex-col text-center items-center justify-center px-4">
-            <h2 className="text-2xl md:text-3xl w-full md:w-1/2">
-              Don't get left behind by the legacy real estate market
+            <h2 className="text-2xl font-black md:text-3xl w-full md:w-2/3">
+              Invest in fractions of rental properties across Indonesia
             </h2>
-            <p className="w-full md:w-1/3 text-base opacity-40 mt-4">
-              It's time for a change. Rising down payments, inflexible terms,
-              and soaring property prices are locking all but the wealthy out
-              from building wealth with real estate. Coinhouse helps anyone lay
-              a path to financial freedom with fractional real estate investing.
+            <p className="w-full font-medium md:w-2/3 text-base mt-4">
+              All without leaving your living room. No experience, connections,
+              or down payments required.
             </p>
           </div>
-          <div className="flex items-start justify-center px-4 pt-10">
-            <div className="flex-col text-start w-2/4">
-              <h2 className="text-2xl md:text-3xl w-full md:w-1/2">
-                Start investing in Coinhouse properties
-              </h2>
-              <p className="w-full md:w-2/3 text-base opacity-40 mt-4">
-                Buy fractional ownership in properties across Indonesia.
-              </p>
-            </div>
-            <Image
-              src="/Coinhouse2.png"
-              alt="Coinhouse Secondary Image"
-              width={600}
-              height={600}
-              className="w-1/4"
-            />
-          </div>
-          <div className="flex justify-center items-center align-center flex-col w-full">
-            <Image
-              src="/LineCoinhouse.png"
-              alt="Coinhouse Line"
-              width={600}
-              height={600}
-              className="flex w-1/3"
-            />
-          </div>
-          <div className="flex items-start justify-center w-full px-36 pt-10">
-            <Image
-              src="/Coinhouse3.png"
-              alt="Coinhouse Secondary Image"
-              width={600}
-              height={600}
-              className="w-1/2"
-            />
-            <div className="flex flex-col text-right w-1/2">
-              <h2 className="text-2xl md:text-3xl w-full md:w-full">
-                Automatically receive rental income
-              </h2>
-              <p className="w-full md:w-full text-right text-base opacity-40 pl-12 mt-4">
-                You’ll get your first rent payment that same day, and daily
-                after that. Your holdings will grow along with the property
-                value, too.
-              </p>
-            </div>
-          </div>
-          <div className="flex items-start justify-center px-4 pt-10">
-            <div className="flex-col text-start w-2/4 mt-12">
-              <h2 className="text-2xl md:text-3xl w-full md:w-1/2">
-                Build the future you deserve
-              </h2>
-              <p className="w-full md:w-2/3 text-base opacity-40 mt-4">
-                Use your rental income to buy more and more real estate and
-                voilà – you’re on the path to financial freedom.
-              </p>
-            </div>
-            <Image
-              src="/Coinhouse4.png"
-              alt="Coinhouse Secondary Image"
-              width={600}
-              height={600}
-              className="w-1/4"
-            />
-          </div>
+          <article className="flex flex-wrap gap-6 justify-center px-4">
+            {properties.map((property, index) => (
+              <Card
+                key={index}
+                image={property.image}
+                houseName={property.houseName}
+                location={property.location}
+                annualReturn={property.annualReturn}
+              />
+            ))}
+          </article>
         </section>
       </main>
     </>

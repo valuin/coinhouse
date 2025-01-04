@@ -53,7 +53,7 @@ export default function Navbar() {
         </button>
         <div className="hidden md:flex md:items-center space-x-4">
           <a href="#" className="text-gray-700 hover:text-primary">
-            Market Place
+            Marketplace
           </a>
           <a href="#" className="text-gray-700 hover:text-primary">
             About Us
@@ -105,7 +105,7 @@ export default function Navbar() {
               className="text-gray-700 hover:text-primary"
               onClick={() => setIsMenuOpen(false)}
             >
-              Market Place
+              Marketplace
             </a>
             <a
               href="#"
