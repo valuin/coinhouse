@@ -16,6 +16,7 @@ const config: Config = {
 			hero: {
 				blue: '#0048FF',
 				orange: '#FFA459',
+				secondary: '#023247',
 			},
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
