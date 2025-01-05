@@ -63,8 +63,8 @@ export default function Home() {
             </h1>
             <p className="mb-6 max-w-full md:max-w-2xl w-full md:w-3/5">
               Buy and sell real estate as effortlessly as trading a share of
-              TSLA. Diversify across 150 properties in 40 markets starting at
-              just $50 and sell with instant liquidity anytime.
+              BBCA. Diversify across 150 properties in 40 markets starting at
+              just Rp100.000 and sell with instant liquidity anytime.
             </p>
             <Link href={"/marketplace"}>
               <Button variant="primary" className="w-full md:w-1/5">
