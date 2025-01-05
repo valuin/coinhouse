@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { FeatureCard } from "@/components/ui/features";
+import Link from "next/link";
 
 export default function Home() {
   const properties = [
@@ -58,16 +59,18 @@ export default function Home() {
         <section className="bg-violet-50 pb-8 h-auto md:h-3/4 flex flex-col md:flex-row items-center justify-between text-start relative p-6 md:p-14">
           <div className="flex flex-col w-full md:w-1/2">
             <h1 className="font-bold text-3xl md:text-4xl mb-4 bg-gradient-to-r from-hero-blue to-hero-orange w-full md:w-3/5 text-transparent bg-clip-text">
-              Turning Properties into Opportunities
+              Mengubah Properti Menjadi Peluang
             </h1>
             <p className="mb-6 max-w-full md:max-w-2xl w-full md:w-3/5">
-              Buy and sell real estate as effortlessly as trading a share of
-              TSLA. Diversify across 150 properties in 40 markets starting at
-              just $50 and sell with instant liquidity anytime.
+              Beli dan jual properti semudah memperdagangkan saham BBCA.
+              Diversifikasi ke 150 properti di 40 pasar mulai dari hanya Rp50.000 dan
+              jual dengan likuiditas instan kapan saja.
             </p>
-            <Button variant="primary" className="w-full md:w-1/5">
-              View Properties
-            </Button>
+            <Link href="/marketplace">
+              <Button variant="primary" className="w-full md:w-1/5">
+                Lihat Properti
+              </Button>
+            </Link>
           </div>
           <div className="w-full md:w-1/2 mt-6 md:mt-0">
             <Image
@@ -83,11 +86,10 @@ export default function Home() {
         <section className="bg-violet-50 py-12 h-auto font-bold space-y-12 text-black flex-col items-center justify-center">
           <div className="flex flex-col text-center items-center justify-center px-4">
             <h2 className="text-2xl font-black md:text-3xl w-full md:w-2/3">
-              Invest in fractions of rental properties across Indonesia
+              Investasi dalam fraksi properti sewa di seluruh Indonesia
             </h2>
             <p className="w-full font-medium md:w-2/3 text-base mt-4">
-              All without leaving your living room. No experience, connections,
-              or down payments required.
+              Semua tanpa meninggalkan ruang tamu Anda. Tidak perlu pengalaman, koneksi, atau uang muka.
             </p>
           </div>
           <article className="flex flex-col gap-6 items-center justify-center px-4">
@@ -103,7 +105,7 @@ export default function Home() {
               ))}
             </div>
             <Button variant={"primary"} className="">
-              View Properties
+              Lihat Properti
             </Button>
 
             <div className="flex flex-col space-y-4 items-center mt-20 justify-center">

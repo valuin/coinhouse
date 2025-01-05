@@ -30,8 +30,8 @@ export const Card: React.FC<CardProps> = ({
           <p className="text-xs text-gray-600">{location}</p>
         </div>
         <div className="flex flex-col justify-end items-end">
-          <p className="text-green-500 font-bold">{annualReturn}</p>
-          <p className="text-right text-xs text-green-500">
+          <p className="text-hero-teal font-bold">{annualReturn}</p>
+          <p className="text-right text-xs text-hero-teal">
             Est. Annual Return
           </p>
         </div>

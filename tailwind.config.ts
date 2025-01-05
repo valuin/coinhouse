@@ -17,7 +17,7 @@ const config: Config = {
 				blue: '#0048FF',
 				orange: '#FFA459',
 				secondary: '#023247',
-				teal: '#2a8e9e',
+				teal: '#4f85f2',
 			},
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
