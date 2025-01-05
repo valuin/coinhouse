@@ -56,7 +56,6 @@ export default function Home() {
   ];
   return (
     <>
-      <Navbar />
       <main className="h-full relative overflow-hidden flex flex-col">
         <section className="bg-violet-50 pb-8 h-auto md:h-3/4 flex flex-col md:flex-row items-center justify-between text-start relative p-6 md:p-14">
           <div className="flex flex-col w-full md:w-1/2">

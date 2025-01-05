@@ -52,7 +52,7 @@ export default function Navbar() {
           </svg>
         </button>
         <div className="hidden md:flex md:items-center space-x-4">
-          <a href="#" className="text-gray-700 hover:text-primary">
+          <a href="/marketplace" className="text-gray-700 hover:text-primary">
             Marketplace
           </a>
           <a href="#" className="text-gray-700 hover:text-primary">
@@ -101,7 +101,7 @@ export default function Navbar() {
           </button>
           <nav className="flex flex-col space-y-2">
             <a
-              href="#"
+              href="/marketplace"
               className="text-gray-700 hover:text-primary"
               onClick={() => setIsMenuOpen(false)}
             >
