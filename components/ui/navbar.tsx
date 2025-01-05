@@ -84,17 +84,17 @@ export default function Navbar() {
       <div
         className={`fixed inset-0 z-50 transform ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
-        } transition-transform duration-300 ease-in-out`}
+        } transition-transform duration-250 ease-in-out`}
       >
         {/* Overlay */}
         <div
-          className={`absolute inset-0 bg-black opacity-0 transition-opacity duration-300 ${
+          className={`absolute inset-0 bg-black opacity-0 transition-opacity duration-0 ${
             isMenuOpen ? "opacity-50" : "opacity-0 pointer-events-none"
           }`}
           onClick={() => setIsMenuOpen(false)}
         ></div>
         {/* Drawer */}
-        <div className="absolute top-0 right-0 w-64 bg-white shadow-lg h-full p-4">
+        <div className="absolute top-0 right-0 w-64 bg-white shadow-lg h-full p-4 transform translate-x-0">
           <button
             className="mb-4 text-gray-700 hover:text-primary focus:outline-none"
             onClick={() => setIsMenuOpen(false)}
