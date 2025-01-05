@@ -10,6 +10,7 @@ import {
 import Image from "next/image";
 import PropertyTabs from "@/components/ui/property-tabs";
 import { MapPin, Home, TrendingUp, Coins } from "lucide-react";
+import { Progress } from "@/components/ui/progress";
 
 export default function PropertyDetails({
   params,
@@ -49,7 +50,6 @@ export default function PropertyDetails({
         </Carousel>
       </div>
 
-      {/* Property Info */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div className="md:col-span-2">
           <h1 className="text-3xl font-bold mb-2">Plaza 54 Residence</h1>
@@ -63,7 +63,7 @@ export default function PropertyDetails({
             <div className="flex flex-col items-center">
               <Home className="w-6 h-6 text-hero-teal mb-2" />
               <span className="text-sm text-gray-600">Property Type</span>
-              <span className="font-semibold">Apartment</span>
+              <span className="font-semibold">Commercial</span>
             </div>
             <div className="flex flex-col items-center">
               <TrendingUp className="w-6 h-6 text-hero-teal mb-2" />
@@ -73,7 +73,7 @@ export default function PropertyDetails({
             <div className="flex flex-col items-center">
               <Coins className="w-6 h-6 text-hero-teal mb-2" />
               <span className="text-sm text-gray-600">Available Tokens</span>
-              <span className="font-semibold">636</span>
+              <span className="font-semibold">6636</span>
             </div>
             <div className="flex flex-col items-center">
               <TrendingUp className="w-6 h-6 text-hero-teal mb-2" />
@@ -160,7 +160,6 @@ export default function PropertyDetails({
                     <li>Pest Report</li>
                     <li>Rent Payment Schedule</li>
                   </ul>
-
                 </div>
               }
               financials={
@@ -184,22 +183,39 @@ export default function PropertyDetails({
             />
           </div>
         </div>
-
         {/* Investment Card */}
-        <div className="bg-violet-50 p-6 rounded-lg shadow-lg h-fit sticky top-4">
+        <div className="bg-white p-6 rounded-lg shadow-lg h-fit sticky top-4">
           <h3 className="text-xl font-semibold mb-4">Investment Details</h3>
+
+          <div className="mb-2">
+            <p className="text-gray-600 text-sm">Starting at</p>
+            <p className="text-2xl text-hero-teal font-bold">Rp 809.750</p>
+          </div>
+
+          <div className="space-y-2 mb-6">
+            <Progress
+              value={83}
+              className="h-2 bg-gray-200"
+              
+            />
+            <div className="flex justify-between text-sm">
+              <span className="text-hero-teal font-medium">83% funded</span>
+              <span className="text-gray-600">6636 tokens left</span>
+            </div>
+          </div>
+
           <div className="space-y-4">
             <div className="flex justify-between">
-              <span className="text-gray-600">Price per token</span>
-              <span className="font-semibold">$50</span>
+              <span className="text-gray-600">Projected Annual Return</span>
+              <span className="font-semibold text-hero-teal">8.6%</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-gray-600">Minimum investment</span>
-              <span className="font-semibold">$100</span>
+              <span className="text-gray-600">Projected Rental Yield</span>
+              <span className="font-semibold text-hero-teal">6%</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-gray-600">Available tokens</span>
-              <span className="font-semibold">636</span>
+              <span className="text-gray-600">Rental Yield</span>
+              <span className="font-semibold text-hero-teal">6%</span>
             </div>
             <button className="w-full bg-hero-teal text-white py-3 rounded-lg hover:bg-hero-teal/80 transition-colors">
               Invest Now
