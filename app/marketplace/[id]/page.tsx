@@ -12,16 +12,116 @@ import PropertyTabs from "@/components/ui/property-tabs";
 import { MapPin, Home, TrendingUp, Coins } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 
+interface PropertyData {
+  id: number;
+  image: string;
+  houseName: string;
+  location: string;
+  rentalYield: string;
+  annualReturn: string;
+  tokensAvailable: string;
+  propertyType?: string;
+}
+
+const getPropertyById = (id: string): PropertyData | undefined => {
+  const dummyData = [
+    {
+      id: 1,
+      image: "/House1.png",
+      houseName: "Plaza 54 Residence",
+      location: "Jln. Pedurenan Mesjid 3 No. 54",
+      rentalYield: "6.0%",
+      annualReturn: "6.0%",
+      tokensAvailable: "636 tokens",
+    },
+    {
+      id: 2,
+      image: "/House2.png",
+      houseName: "Green Valley Apartments",
+      location: "123 Main Street, Cityville",
+      rentalYield: "5.5%",
+      annualReturn: "5.8%",
+      tokensAvailable: "4500 tokens",
+    },
+    {
+      id: 3,
+      image: "/House3.png",
+      houseName: "Sunset Residences",
+      location: "456 Ocean Drive, Coast City",
+      rentalYield: "7.0%",
+      annualReturn: "7.2%",
+      tokensAvailable: "8000 tokens",
+    },
+    {
+      id: 4,
+      image: "/House2.png",
+      houseName: "Urban Lofts",
+      location: "789 Downtown Ave, Metro Town",
+      rentalYield: "6.3%",
+      annualReturn: "6.5%",
+      tokensAvailable: "5200 tokens",
+    },
+    {
+      id: 5,
+      image: "/House1.png",
+      houseName: "Plaza 54 Residence",
+      location: "Jln. Pedurenan Mesjid 3 No. 54",
+      rentalYield: "6.0%",
+      annualReturn: "6.0%",
+      tokensAvailable: "6636 tokens",
+    },
+    {
+      id: 6,
+      image: "/House2.png",
+      houseName: "Green Valley Apartments",
+      location: "123 Main Street, Cityville",
+      rentalYield: "5.5%",
+      annualReturn: "5.8%",
+      tokensAvailable: "4500 tokens",
+    },
+    {
+      id: 7,
+      image: "/House3.png",
+      houseName: "Sunset Residences",
+      location: "456 Ocean Drive, Coast City",
+      rentalYield: "7.0%",
+      annualReturn: "7.2%",
+      tokensAvailable: "8000 tokens",
+    },
+    {
+      id: 8,
+      image: "/House2.png",
+      houseName: "Urban Lofts",
+      location: "789 Downtown Ave, Metro Town",
+      rentalYield: "6.3%",
+      annualReturn: "6.5%",
+      tokensAvailable: "5200 tokens",
+    },
+  ];
+
+  return dummyData.find((property) => property.id === parseInt(id));
+};
+
+interface PropertyImages {
+  id: number;
+  url: string;
+}
+
 export default function PropertyDetails({
   params,
 }: {
   params: { id: string };
 }) {
-  const propertyImages = [
-    "/House1.png",
-    "/House2.png",
-    "/House3.png",
-    // Add more images
+  const propertyData = getPropertyById(params.id);
+
+  if (!propertyData) {
+    return <div>Property not found</div>;
+  }
+
+  const propertyImages: PropertyImages[] = [
+    { id: 1, url: "/House1.png" },
+    { id: 2, url: "/House2.png" },
+    { id: 3, url: "/House3.png" },
   ];
 
   return (
@@ -34,8 +134,8 @@ export default function PropertyDetails({
               <CarouselItem key={index} className="h-[60vh]">
                 <div className="relative w-full h-full">
                   <Image
-                    src={image}
-                    alt={`Property image ${index + 1}`}
+                    src={propertyImages[index].url}
+                    alt={propertyData.houseName}
                     width={1920}
                     height={1080}
                     priority={index === 0}
@@ -52,10 +152,10 @@ export default function PropertyDetails({
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div className="md:col-span-2">
-          <h1 className="text-3xl font-bold mb-2">Plaza 54 Residence</h1>
+          <h1 className="text-3xl font-bold mb-2">{propertyData.houseName}</h1>
           <div className="flex items-center text-gray-600 mb-6">
             <MapPin className="w-5 h-5 mr-2" />
-            <span>Jln. Pedurenan Mesjid 3 No. 54</span>
+            <span>{propertyData.location}</span>
           </div>
 
           {/* Property Stats */}
@@ -68,17 +168,19 @@ export default function PropertyDetails({
             <div className="flex flex-col items-center">
               <TrendingUp className="w-6 h-6 text-hero-teal mb-2" />
               <span className="text-sm text-gray-600">Rental Yield</span>
-              <span className="font-semibold">6.0%</span>
+              <span className="font-semibold">{propertyData.rentalYield}</span>
             </div>
             <div className="flex flex-col items-center">
               <Coins className="w-6 h-6 text-hero-teal mb-2" />
               <span className="text-sm text-gray-600">Available Tokens</span>
-              <span className="font-semibold">6636</span>
+              <span className="font-semibold">
+                {propertyData.tokensAvailable}
+              </span>
             </div>
             <div className="flex flex-col items-center">
               <TrendingUp className="w-6 h-6 text-hero-teal mb-2" />
               <span className="text-sm text-gray-600">Annual Return</span>
-              <span className="font-semibold">6.0%</span>
+              <span className="font-semibold">{propertyData.annualReturn}</span>
             </div>
           </div>
 
@@ -193,29 +295,25 @@ export default function PropertyDetails({
           </div>
 
           <div className="space-y-2 mb-6">
-            <Progress
-              value={83}
-              className="h-2 bg-gray-200"
-              
-            />
+            <Progress value={83} className="h-2 bg-gray-200" />
             <div className="flex justify-between text-sm">
               <span className="text-hero-teal font-medium">83% funded</span>
-              <span className="text-gray-600">6636 tokens left</span>
+              <span className="text-gray-600">{propertyData.tokensAvailable} tokens left</span>
             </div>
           </div>
 
           <div className="space-y-4">
             <div className="flex justify-between">
               <span className="text-gray-600">Projected Annual Return</span>
-              <span className="font-semibold text-hero-teal">8.6%</span>
+              <span className="font-semibold text-hero-teal">{propertyData.annualReturn}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-gray-600">Projected Rental Yield</span>
-              <span className="font-semibold text-hero-teal">6%</span>
+              <span className="font-semibold text-hero-teal">{propertyData.rentalYield}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-gray-600">Rental Yield</span>
-              <span className="font-semibold text-hero-teal">6%</span>
+              <span className="font-semibold text-hero-teal">{propertyData.rentalYield}</span>
             </div>
             <button className="w-full bg-hero-teal text-white py-3 rounded-lg hover:bg-hero-teal/80 transition-colors">
               Invest Now
