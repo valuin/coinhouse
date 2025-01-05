@@ -48,8 +48,8 @@ export default function PropertyDesc() {
 
             <p className="text-gray-600 leading-relaxed">
               This property is situated in the heart of Kuningan, one of
-              Jakarta&rsquos prime business districts. Nearby prominent tenants
-              include McDonald&rsquos, KFC, Bank Mandiri, and Tokopedia Tower, making
+              Jakarta&rsquo;s prime business districts. Nearby prominent tenants
+              include McDonald&rsquo;s, KFC, Bank Mandiri, and Tokopedia Tower, making
               this location highly desirable for business and retail activities.
             </p>
 
@@ -63,7 +63,7 @@ export default function PropertyDesc() {
             </p>
 
             <p className="text-gray-600 leading-relaxed">
-              Refer to the &rsquoDocuments&rsquo tab above to view the following
+              Refer to the &rsquo;Documents&rsquo; tab above to view the following
               information:
             </p>
             <ul className="list-disc text-gray-600 leading-relaxed pl-6">
