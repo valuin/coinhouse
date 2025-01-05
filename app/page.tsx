@@ -59,16 +59,16 @@ export default function Home() {
         <section className="bg-violet-50 pb-8 h-auto md:h-3/4 flex flex-col md:flex-row items-center justify-between text-start relative p-6 md:p-14">
           <div className="flex flex-col w-full md:w-1/2">
             <h1 className="font-bold text-3xl md:text-4xl mb-4 bg-gradient-to-r from-hero-blue to-hero-orange w-full md:w-3/5 text-transparent bg-clip-text">
-              Mengubah Properti Menjadi Peluang
+              Turning Properties into Opportunities
             </h1>
             <p className="mb-6 max-w-full md:max-w-2xl w-full md:w-3/5">
-              Beli dan jual properti semudah memperdagangkan saham BBCA.
-              Diversifikasi ke 150 properti di 40 pasar mulai dari hanya Rp50.000 dan
-              jual dengan likuiditas instan kapan saja.
+              Buy and sell real estate as effortlessly as trading a share of
+              TSLA. Diversify across 150 properties in 40 markets starting at
+              just $50 and sell with instant liquidity anytime.
             </p>
-            <Link href="/marketplace">
+            <Link href={"/marketplace"}>
               <Button variant="primary" className="w-full md:w-1/5">
-                Lihat Properti
+                View Properties
               </Button>
             </Link>
           </div>
@@ -86,10 +86,11 @@ export default function Home() {
         <section className="bg-violet-50 py-12 h-auto font-bold space-y-12 text-black flex-col items-center justify-center">
           <div className="flex flex-col text-center items-center justify-center px-4">
             <h2 className="text-2xl font-black md:text-3xl w-full md:w-2/3">
-              Investasi dalam fraksi properti sewa di seluruh Indonesia
+              Invest in fractions of rental properties across Indonesia
             </h2>
             <p className="w-full font-medium md:w-2/3 text-base mt-4">
-              Semua tanpa meninggalkan ruang tamu Anda. Tidak perlu pengalaman, koneksi, atau uang muka.
+              All without leaving your living room. No experience, connections,
+              or down payments required.
             </p>
           </div>
           <article className="flex flex-col gap-6 items-center justify-center px-4">
@@ -105,7 +106,7 @@ export default function Home() {
               ))}
             </div>
             <Button variant={"primary"} className="">
-              Lihat Properti
+              View Properties
             </Button>
 
             <div className="flex flex-col space-y-4 items-center mt-20 justify-center">
