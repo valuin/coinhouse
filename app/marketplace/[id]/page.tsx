@@ -24,7 +24,7 @@ interface PropertyData {
 }
 
 const getPropertyById = (id: string): PropertyData | undefined => {
-    
+
   return dummyData.find((property) => property.id === parseInt(id));
 };
 
@@ -51,7 +51,7 @@ export default function PropertyDetails({
   ];
 
   return (
-    <div className="w-full bg-violet-50 mx-auto px-32 py-8">
+    <div className="w-full bg-violet-50 mx-auto px-10 md:px-20 lg:px-32 py-8">
       {/* Image Carousel */}
       <div className="h-[60vh] mb-8">
         <Carousel className="w-full h-full">

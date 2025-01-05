@@ -1,4 +1,5 @@
 import PropertyTabs from "../ui/property-tabs";
+import { ValueTable, ReturnTable, RentTable, TokenTable } from "../sections/investment-value";
 
 export default function PropertyDesc() {
   return (
@@ -80,7 +81,10 @@ export default function PropertyDesc() {
         financials={
           <div className="space-y-4">
             <h2 className="text-2xl font-semibold">Financial Details</h2>
-            {/* Add financial content */}
+                <ValueTable/>
+                <ReturnTable/>
+                <RentTable/>
+                <TokenTable/>
           </div>
         }
         documents={
