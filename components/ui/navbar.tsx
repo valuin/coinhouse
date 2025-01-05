@@ -8,23 +8,27 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <nav className="bg-violet-50 shadow-md">
-      <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-        <Image
-          src="/LogoCoinhouse.svg"
-          alt="Coinhouse Logo"
-          width={150}
-          height={50}
-          className="md:hidden"
-        />
-        <a href="/">
-          <Image
-            src="/LogoCoinhouse.svg"
-            alt="Coinhouse Logo"
-            width={200}
-            height={100}
-            className="hidden md:block"
-          />
-        </a>
+      <div className="max-w-full mx-auto px-12 py-3 flex justify-between items-center">
+        <div>
+          <a href="/">
+            <Image
+              src="/LogoCoinhouse.svg"
+              alt="Coinhouse Logo"
+              width={150}
+              height={50}
+              className="md:hidden"
+            />
+          </a>
+          <a href="/">
+            <Image
+              src="/LogoCoinhouse.svg"
+              alt="Coinhouse Logo"
+              width={200}
+              height={100}
+              className="hidden md:block"
+            />
+          </a>
+        </div>
         <button
           className="md:hidden text-gray-700 hover:text-primary focus:outline-none"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
