@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import { Lato, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/ui/navbar";
+import Footer from "@/components/ui/footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -35,10 +36,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${InterFont.className} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${InterFont.className} antialiased `}
       >
         <Navbar/>
         {children}
+        <Footer/>
       </body>
     </html>
   );

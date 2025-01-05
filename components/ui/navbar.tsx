@@ -16,13 +16,15 @@ export default function Navbar() {
           height={50}
           className="md:hidden"
         />
-        <Image
-          src="/LogoCoinhouse.svg"
-          alt="Coinhouse Logo"
-          width={200}
-          height={100}
-          className="hidden md:block"
-        />
+        <a href="/">
+          <Image
+            src="/LogoCoinhouse.svg"
+            alt="Coinhouse Logo"
+            width={200}
+            height={100}
+            className="hidden md:block"
+          />
+        </a>
         <button
           className="md:hidden text-gray-700 hover:text-primary focus:outline-none"
           onClick={() => setIsMenuOpen(!isMenuOpen)}

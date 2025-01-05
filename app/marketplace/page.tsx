@@ -86,6 +86,7 @@ export default function Marketplace() {
           {dummyData.map((card) => (
             <MarketCard
               key={card.id}
+              id={card.id}
               image={card.image}
               houseName={card.houseName}
               location={card.location}

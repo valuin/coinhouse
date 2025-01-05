@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Heart } from "lucide-react";
+import Link from "next/link";
 
 interface CardProps {
   image: string;
@@ -40,6 +41,7 @@ export const Card: React.FC<CardProps> = ({
 };
 
 interface MarketCardProps {
+  id: number; // Add id to props
   image: string;
   houseName: string;
   location: string;
@@ -50,6 +52,7 @@ interface MarketCardProps {
 }
 
 export const MarketCard: React.FC<MarketCardProps> = ({
+  id,
   image,
   houseName,
   location,
@@ -59,8 +62,8 @@ export const MarketCard: React.FC<MarketCardProps> = ({
   featured,
 }) => {
   return (
-    <div className="bg-white shadow-md rounded-lg overflow-hidden relative w-[300px] h-[400px] flex flex-col">
-      <div className="absolute top-4 left-4 z-10 bg-teal-500 text-white text-xs px-2 py-1 rounded-md">
+    <div className="bg-white shadow-md rounded-lg overflow-hidden relative w-[325px] h-[400px] flex flex-col">
+      <div className="absolute top-4 left-4 z-10 bg-hero-teal text-white text-xs px-2 py-1 rounded-md">
         FEATURED
       </div>
       <div className="absolute top-4 right-4 z-10 cursor-pointer">
@@ -91,9 +94,11 @@ export const MarketCard: React.FC<MarketCardProps> = ({
           </div>
         </div>
         <div className="mt-auto">
-          <button className="w-full bg-hero-teal  hover:bg-hero-teal/80 text-white py-2 rounded-md text-sm">
-            Available: {tokensAvailable}
-          </button>
+          <Link href={`/marketplace/${id}`}>
+            <button className="w-full bg-hero-teal hover:bg-hero-teal/80 text-white py-2 rounded-md text-sm">
+              Available: {tokensAvailable}
+            </button>
+          </Link>
         </div>
       </div>
     </div>
