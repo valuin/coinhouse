@@ -4,8 +4,6 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { FeatureCard } from "@/components/ui/features";
-import { Linkedin, Twitter, Facebook } from "lucide-react"
-import Navbar from "@/components/ui/navbar";
 
 export default function Home() {
   const properties = [

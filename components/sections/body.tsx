@@ -5,10 +5,10 @@ export default function Body() {
     <section className="bg-hero-secondary py-12 h-auto font-bold space-y-12 text-white flex-col items-center justify-center">
       <div className="flex flex-col text-center items-center justify-center px-4">
         <h2 className="text-2xl md:text-3xl w-full md:w-1/3">
-          Don't get left behind by the legacy real estate market
+          Don&rsquot get left behind by the legacy real estate market
         </h2>
         <p className="w-full md:w-1/3 text-base opacity-40 mt-4">
-          It's time for a change. Rising down payments, inflexible terms, and
+          It&rsquos time for a change. Rising down payments, inflexible terms, and
           soaring property prices are locking all but the wealthy out from
           building wealth with real estate. Coinhouse helps anyone lay a path to
           financial freedom with fractional real estate investing.

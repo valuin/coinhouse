@@ -12,11 +12,6 @@ interface InvestmentItem {
   value: string;
 }
 
-const formatToIDR = (value: string): string => {
-  if (value.includes("%")) return value;
-  const numericValue = parseInt(value.replace(/\D/g, ""));
-  return `Rp ${numericValue.toLocaleString("id-ID")}`;
-};
 
 const investmentData: InvestmentItem[] = [
   { label: "Total Investment Value", value: "Rp2.488.000" },

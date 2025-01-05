@@ -59,7 +59,6 @@ export const MarketCard: React.FC<MarketCardProps> = ({
   rentalYield,
   annualReturn,
   tokensAvailable,
-  featured,
 }) => {
   return (
     <div className="bg-white shadow-md rounded-lg overflow-hidden relative w-[325px] h-[400px] flex flex-col">

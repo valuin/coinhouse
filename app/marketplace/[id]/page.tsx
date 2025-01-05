@@ -11,33 +11,20 @@ import Image from "next/image";
 import PropertyDesc from "@/components/sections/property-desc";
 import { MapPin, Home, TrendingUp, Coins } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
-import { dummyData } from "../page";
-interface PropertyData {
-  id: number;
-  image: string;
-  houseName: string;
-  location: string;
-  rentalYield: string;
-  annualReturn: string;
-  tokensAvailable: string;
-  propertyType?: string;
+import { dummyData, PropertyData } from "@/lib/data";
+
+interface PropertyDetailsProps {
+  params: { id: string };
 }
 
 const getPropertyById = (id: string): PropertyData | undefined => {
-
   return dummyData.find((property) => property.id === parseInt(id));
 };
-
 interface PropertyImages {
   id: number;
   url: string;
 }
-
-export default function PropertyDetails({
-  params,
-}: {
-  params: { id: string };
-}) {
+export default function PropertyDetails({ params }: PropertyDetailsProps) {
   const propertyData = getPropertyById(params.id);
 
   if (!propertyData) {
@@ -111,7 +98,7 @@ export default function PropertyDetails({
           </div>
 
           {/* Description */}
-          <PropertyDesc/>
+          <PropertyDesc />
         </div>
         {/* Investment Card */}
         <div className="bg-white p-6 rounded-lg shadow-lg h-fit sticky top-4">
