@@ -29,18 +29,18 @@ export default function PropertyTabs({ details, financials, documents, market }:
             Financials
           </TabsTrigger>
           <TabsTrigger
-            value="documents"
-            className="relative after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5 hover:text-hero-teal  data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-hero-teal data-[state=active]:hover:text-hero-teal"
-          >
-            <Files className="-ms-0.5 me-1.5 opacity-60" size={16} />
-            Documents
-          </TabsTrigger>
-          <TabsTrigger
             value="market"
             className="relative after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5 hover:text-hero-teal  data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-hero-teal data-[state=active]:hover:text-hero-teal"
           >
-            <TrendingUp className="-ms-0.5 me-1.5 opacity-60" size={16} />
+            <Files className="-ms-0.5 me-1.5 opacity-60" size={16} />
             Market
+          </TabsTrigger>
+          <TabsTrigger
+            value="documents"
+            className="relative after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5 hover:text-hero-teal  data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-hero-teal data-[state=active]:hover:text-hero-teal"
+          >
+            <TrendingUp className="-ms-0.5 me-1.5 opacity-60" size={16} />
+            Documents
           </TabsTrigger>
         </TabsList>
         <ScrollBar orientation="horizontal" />

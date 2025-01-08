@@ -4,8 +4,9 @@ import {
   ReturnTable,
   RentTable,
   TokenTable,
-  RecentOrders
+  RecentOrders,
 } from "../sections/investment-value";
+import { Button } from "../ui/button";
 
 export default function PropertyDesc() {
   return (
@@ -97,6 +98,21 @@ export default function PropertyDesc() {
         documents={
           <div className="space-y-4">
             <h2 className="text-2xl font-semibold">Documents</h2>
+            <div className="flex gap-4 bg-transparent border-2 border-black/50 w-full h-full p-12 rounded-xl overflow-hidden">
+              <div className="flex text-start gap-12 text-hero-teal rounded-lg w-full  p-4 justify-center items-start">
+                <a href="https://doc.coinhouse/TZHV715" target="_blank">
+                  <h3 className="font-semibold text-2xl">
+                    https://doc.coinhouse/TZHV715
+                  </h3>
+                </a>
+                <Button variant="primary">View Documents</Button>
+              </div>
+            </div>
+          </div>
+        }
+        market={
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold">Market Analysis</h2>
             <div className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-transparent border-2 border-black/50 w-full h-full p-12 rounded-xl overflow-hidden">
                 <div className="flex flex-col text-start bg-hero-teal rounded-lg w-full text-white p-4 justify-center items-start">
@@ -117,21 +133,15 @@ export default function PropertyDesc() {
                 <div className="flex flex-col text-start bg-hero-teal rounded-lg w-full text-white p-4 justify-center items-start">
                   <h3 className="font-regular">Market Cap</h3>
                   <span className="text-xl font-semibold">Rp39 Billion</span>
-                  <h4>6,636 Tokens</h4>
+                  <h4>6636 Tokens</h4>
                 </div>
               </div>
               <div className="items-start">
                 <h1 className="text-2xl font-semibold">Open Orders</h1>
                 <span className="">Only showing 10 most recent orders</span>
-                <RecentOrders/>
+                <RecentOrders />
               </div>
             </div>
-          </div>
-        }
-        market={
-          <div className="space-y-4">
-            <h2 className="text-2xl font-semibold">Market Analysis</h2>
-            {/* Add market analysis content */}
           </div>
         }
       />
