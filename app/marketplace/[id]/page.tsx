@@ -106,7 +106,7 @@ export default function PropertyDetails({ params }: PropertyDetailsProps) {
 
           <div className="mb-2">
             <p className="text-gray-600 text-sm">Starting at</p>
-            <p className="text-2xl text-hero-teal font-bold">Rp 809.750</p>
+            <p className="text-2xl text-hero-teal font-bold">Rp809.750</p>
           </div>
 
           <div className="space-y-2 mb-6">

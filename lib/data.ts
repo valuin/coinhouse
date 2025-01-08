@@ -17,7 +17,7 @@ export const dummyData: PropertyData[] = [
     location: "Jln. Pedurenan Mesjid 3 No. 54",
     rentalYield: "6.0%",
     annualReturn: "6.0%",
-    tokensAvailable: "636 tokens",
+    tokensAvailable: "6636 tokens",
     propertyType: "Commercial",
   },
   {

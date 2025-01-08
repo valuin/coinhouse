@@ -5,6 +5,7 @@ import {
   RentTable,
   TokenTable,
   RecentOrders,
+  InvestmentSummary
 } from "../sections/investment-value";
 import { Button } from "../ui/button";
 import { Component } from "./stacked-chart";
@@ -95,6 +96,7 @@ export default function PropertyDesc() {
             <RentTable />
             <TokenTable />
             <Component />
+            <InvestmentSummary />
           </div>
         }
         documents={

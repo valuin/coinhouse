@@ -153,7 +153,7 @@ export function TokenTable() {
         <Progress value={83} className="h-2 bg-gray-200" />
         <div className="flex justify-between text-sm">
           <span className="text-hero-teal font-medium">83%</span>
-          <span className="text-gray-600">636 tokens left</span>
+          <span className="text-gray-600">6636 tokens left</span>
         </div>
       </div>
 
@@ -193,6 +193,67 @@ export function RecentOrders() {
               <TableCell className={`text-right py-3 font-semibold p-4 ${order.type === "Buy" ? "text-green-500" : "text-red-500"}`}>
                 {order.type}
               </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </div>
+  );
+}
+
+
+export function InvestmentSummary() {
+  const investmentData = [
+    {
+      metric: "Cumulative Net Cash Flow",
+      year5: "Rp242.419",
+      year10: "Rp484.839",
+      year20_1: "Rp969.679",
+      year20_2: "Rp1.454.519",
+    },
+    {
+      metric: "Cumulative Appreciation Gain",
+      year5: "Rp105.048",
+      year10: "Rp210.097",
+      year20_1: "Rp420.194",
+      year20_2: "Rp630.291",
+    },
+    {
+      metric: "Your Investment",
+      year5: "Rp808.066",
+      year10: "Rp808.066",
+      year20_1: "Rp808.066",
+      year20_2: "Rp808.066",
+    },
+    {
+      metric: "Total Investment Value",
+      year5: "Rp1.155.535",
+      year10: "Rp1.503.003",
+      year20_1: "Rp2.197.940",
+      year20_2: "Rp2.892.877",
+    },
+  ];
+
+  return (
+    <div className="text-black">
+      <Table className="w-full text-black bg-white rounded-md">
+        <TableHeader>
+          <TableRow>
+            <TableHead className="font-semibold text-left py-2 pl-4 text-black"> </TableHead>
+            <TableHead className="font-semibold text-center py-2 text-black">Year 5</TableHead>
+            <TableHead className="font-semibold text-center py-2 text-black">Year 10</TableHead>
+            <TableHead className="font-semibold text-center py-2 text-black">Year 20</TableHead>
+            <TableHead className="font-semibold text-center py-2 text-black">Year 20</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {investmentData.map((item) => (
+            <TableRow key={item.metric} className={item.metric === "Total Investment Value" ? "bg-hero-teal text-white font-bold hover:bg-hero-blue" : ""}>
+              <TableCell className="font-medium py-2 pl-4">{item.metric}</TableCell>
+              <TableCell className="text-center py-2">{item.year5}</TableCell>
+              <TableCell className="text-center py-2">{item.year10}</TableCell>
+              <TableCell className="text-center py-2">{item.year20_1}</TableCell>
+              <TableCell className="text-center py-2">{item.year20_2}</TableCell>
             </TableRow>
           ))}
         </TableBody>
