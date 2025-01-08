@@ -46,12 +46,6 @@ const chartData = [
     { time: 30, yourInvestment: 105 * 15000, cumAppreciation: 45 * 15000, cumNetCashFlow: 46 * 15000 },
   ];
 
-interface ChartConfig {
-  width?: number;
-  height?: number;
-  responsive?: boolean;
-}
-
 
 const chartConfig = {
   yourInvestment: {
@@ -59,11 +53,11 @@ const chartConfig = {
     color: "#374151", // Dark Blue
   },
   cumAppreciation: {
-    label: "Cum. Appreciation",
+    label: "Cumulative Appreciation",
     color: "#3B82F6", // Blue
   },
   cumNetCashFlow: {
-    label: "Cum. Net Cash Flow",
+    label: "Cumulative Net Cash Flow",
     color: "#67E8F9", // Light Blue
   },
 };
@@ -109,7 +103,7 @@ export function Component() {
               formatter={(value, name) => [`Rp${value}`, name]}
             />
             <Legend
-              payload={Object.entries(chartConfig).map(([key, value]) => ({
+              payload={Object.values(chartConfig).map((value) => ({
                 value: value.label,
                 type: "square",
                 color: value.color,
