@@ -1,5 +1,11 @@
 import PropertyTabs from "../ui/property-tabs";
-import { ValueTable, ReturnTable, RentTable, TokenTable } from "../sections/investment-value";
+import {
+  ValueTable,
+  ReturnTable,
+  RentTable,
+  TokenTable,
+  RecentOrders
+} from "../sections/investment-value";
 
 export default function PropertyDesc() {
   return (
@@ -49,8 +55,9 @@ export default function PropertyDesc() {
             <p className="text-gray-600 leading-relaxed">
               This property is situated in the heart of Kuningan, one of
               Jakarta&rsquo;s prime business districts. Nearby prominent tenants
-              include McDonald&rsquo;s, KFC, Bank Mandiri, and Tokopedia Tower, making
-              this location highly desirable for business and retail activities.
+              include McDonald&rsquo;s, KFC, Bank Mandiri, and Tokopedia Tower,
+              making this location highly desirable for business and retail
+              activities.
             </p>
 
             <h3 className="font-semibold">Easy Access to Major Roads</h3>
@@ -63,8 +70,8 @@ export default function PropertyDesc() {
             </p>
 
             <p className="text-gray-600 leading-relaxed">
-              Refer to the &rsquo;Documents&rsquo; tab above to view the following
-              information:
+              Refer to the &rsquo;Documents&rsquo; tab above to view the
+              following information:
             </p>
             <ul className="list-disc text-gray-600 leading-relaxed pl-6">
               <li>Rent Roll & Lease Terms</li>
@@ -81,16 +88,44 @@ export default function PropertyDesc() {
         financials={
           <div className="space-y-4">
             <h2 className="text-2xl font-semibold">Financial Details</h2>
-                <ValueTable/>
-                <ReturnTable/>
-                <RentTable/>
-                <TokenTable/>
+            <ValueTable />
+            <ReturnTable />
+            <RentTable />
+            <TokenTable />
           </div>
         }
         documents={
           <div className="space-y-4">
             <h2 className="text-2xl font-semibold">Documents</h2>
-            {/* Add documents content */}
+            <div className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-transparent border-2 border-black/50 w-full h-full p-12 rounded-xl overflow-hidden">
+                <div className="flex flex-col text-start bg-hero-teal rounded-lg w-full text-white p-4 justify-center items-start">
+                  <h3 className="font-regular">Value</h3>
+                  <span className="text-xl font-semibold">Rp808.066</span>
+                  <h4>Last Traded Value</h4>
+                </div>
+                <div className="flex flex-col text-start bg-hero-teal rounded-lg w-full text-white p-4 justify-center items-start">
+                  <h3 className="font-regular">Estimated value</h3>
+                  <span className="text-xl font-semibold">Rp808.066</span>
+                  <h4>House Canary</h4>
+                </div>
+                <div className="flex flex-col text-start bg-hero-teal rounded-lg w-full text-white p-4 justify-center items-start">
+                  <h3 className="font-regular">Trade Volume</h3>
+                  <span className="text-xl font-semibold">Rp179.390</span>
+                  <h4>Last 4 weeks</h4>
+                </div>
+                <div className="flex flex-col text-start bg-hero-teal rounded-lg w-full text-white p-4 justify-center items-start">
+                  <h3 className="font-regular">Market Cap</h3>
+                  <span className="text-xl font-semibold">Rp39 Billion</span>
+                  <h4>6,636 Tokens</h4>
+                </div>
+              </div>
+              <div className="items-start">
+                <h1 className="text-2xl font-semibold">Open Orders</h1>
+                <span className="">Only showing 10 most recent orders</span>
+                <RecentOrders/>
+              </div>
+            </div>
           </div>
         }
         market={

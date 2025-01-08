@@ -2,6 +2,7 @@ import {
   Table,
   TableBody,
   TableCell,
+  TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
@@ -12,6 +13,12 @@ interface InvestmentItem {
   value: string;
 }
 
+interface RecentOrder {
+  date: string;
+  size: number;
+  price: string;
+  type: "Buy" | "Sell";
+}
 
 const investmentData: InvestmentItem[] = [
   { label: "Total Investment Value", value: "Rp2.488.000" },
@@ -38,6 +45,15 @@ const annualRentData: InvestmentItem[] = [
   { label: "Monthly Cash Flow", value: "Rp12 Mio" },
   { label: "Projected Annual Cash Flow", value: "Rp150 Mio" },
 ];
+
+const recentOrders: RecentOrder[] = [
+  { date: "January 5", size: 1, price: "Rp800.000", type: "Buy" },
+  { date: "January 5", size: 1, price: "Rp800.000", type: "Sell" },
+  { date: "January 6", size: 5, price: "Rp820.000", type: "Buy" },
+  { date: "January 7", size: 1, price: "Rp820.000", type: "Sell" },
+  { date: "January 8", size: 1, price: "Rp820.000", type: "Buy" },
+];
+
 
 export function ValueTable() {
   return (
@@ -149,6 +165,38 @@ export function TokenTable() {
           <span className="text-gray-600">+Rp 125.000.000</span>
         </div>
       </div>
+    </div>
+  );
+}
+
+export function RecentOrders() {
+  return (
+    <div className="space-y-4 py-5 text-black">
+      <Table className="w-full text-black bg-white rounded-lg p-4">
+        <TableHeader>
+          <TableRow>
+            <TableHead className="font-semibold text-2xl py-4 p-4 text-black">Recently Filled Orders</TableHead>
+          </TableRow>
+          <TableRow>
+            <TableHead className="font-semibold py-4 text-black  p-4">Date</TableHead>
+            <TableHead className="font-semibold text-center py-4 text-black p-4">Size</TableHead>
+            <TableHead className="font-semibold text-center py-4 text-black p-4">Price</TableHead>
+            <TableHead className="font-semibold text-right py-4 text-black p-4">Type</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {recentOrders.map((order, index) => (
+            <TableRow key={index} className="hover:bg-gray-50">
+              <TableCell className="font-medium py-3 p-4">{order.date}</TableCell>
+              <TableCell className="text-center py-3 p-4">{order.size} Tokens</TableCell>
+              <TableCell className="text-center py-3 p-4">{order.price}</TableCell>
+              <TableCell className={`text-right py-3 font-semibold p-4 ${order.type === "Buy" ? "text-green-500" : "text-red-500"}`}>
+                {order.type}
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
     </div>
   );
 }
