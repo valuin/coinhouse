@@ -1,9 +1,7 @@
-import { MarketCard } from "@/components/ui/card";
+import { MarketCard } from "@/components/ui/prop-card";
 import { dummyData, PropertyData } from "@/lib/data";
 
 export default function Marketplace() {
-
-
   return (
     <div>
       <section className="bg-violet-50 pb-8 h-auto font-bold space-y-12 text-black flex-col items-center justify-center">

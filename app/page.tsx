@@ -2,7 +2,7 @@
 import Body from "@/components/sections/body";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { Card } from "@/components/ui/prop-card";
 import { FeatureCard } from "@/components/ui/features";
 import Link from "next/link";
 

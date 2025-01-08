@@ -7,6 +7,7 @@ import {
   RecentOrders,
 } from "../sections/investment-value";
 import { Button } from "../ui/button";
+import { Component } from "./stacked-chart";
 
 export default function PropertyDesc() {
   return (
@@ -93,6 +94,7 @@ export default function PropertyDesc() {
             <ReturnTable />
             <RentTable />
             <TokenTable />
+            <Component />
           </div>
         }
         documents={
