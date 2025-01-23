@@ -5,7 +5,7 @@ export default function Marketplace() {
   return (
     <div>
       <section className="bg-violet-50 pb-8 h-auto font-bold space-y-12 text-black flex-col items-center justify-center">
-        <div className="grid pt-12 px-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid pt-12 px-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-14 xl:gap-6">
           {dummyData.map((card: PropertyData) => (
             <MarketCard
               key={card.id}
